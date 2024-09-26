@@ -1,3 +1,12 @@
+//O código abaixo pula a exceção que ocorre no console do navegador
+//quando o Cypress não consegue encontrar um elemento na tela
+// definido pelo highcharts ( graficos do dashboard)
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // returning false here prevents Cypress from
+  // failing the test
+  return false
+})
+
 describe('template spec', () => {
   it('passes', () => {
 
@@ -25,5 +34,8 @@ describe('template spec', () => {
     //driver.findElement(By.xpath('/html/body/div/div/div/div[1]/div/form/div[3]/input')).click()
     cy.get(':nth-child(3) > .btn').click()
     //cy.get('.btn-primary').click()
+
+    //criar uma asserção para verificar o login
+    cy.get('.navbar').should('be.visible')
   })
 })
