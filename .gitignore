@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Cypress cache
+.cypress/
+cypress/videos/
+cypress/screenshots/
+cypress/results/
+
+# Config files
+cypress.json
+cypress.env.json
+
+# Log files
+*.log
+
+# IDE settings
+.idea/
+.vscode/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
